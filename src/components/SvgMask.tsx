@@ -30,6 +30,7 @@ interface Props {
   easing: (value: number) => number
   stop: () => void
   handleFunction: () => void
+  blockMaskClick?: boolean
 }
 
 interface State {
@@ -49,6 +50,7 @@ export class SvgMask extends Component<Props, State> {
     size: { x: 0, y: 0 },
     position: { x: 0, y: 0 },
     maskOffset: 0,
+    blockMaskClick: false,
   }
 
   listenerID: string
@@ -192,7 +194,7 @@ export class SvgMask extends Component<Props, State> {
       <Wrapper
         style={this.props.style}
         onLayout={this.handleLayout}
-        // pointerEvents='none'
+        pointerEvents={this.props.blockMaskClick ? 'auto' : 'none'}
         onPress={dismissOnPress ? stop : undefined}
       >
 

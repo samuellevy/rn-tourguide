@@ -1,8 +1,8 @@
 {
   "name": "levy-rn-tourguide",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
-  "main": "lib/index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
   "private": false,
   "files": [
@@ -14,7 +14,7 @@
     "test": "TZ=Europe/Paris jest --no-watchman",
     "tsc": "node_modules/.bin/tsc --noEmit false",
     "tsc:watch": "node_modules/.bin/tsc --noEmit false --watch",
-    "build": "rm -rf lib/ && node_modules/.bin/tsc",
+    "build": "rm -rf lib/ && node_modules/.bin/tsc --noEmit false",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
     "lint": "tslint --project .",

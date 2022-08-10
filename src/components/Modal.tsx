@@ -37,7 +37,8 @@ export interface ModalProps {
   stop: () => void
   next: () => void
   prev: () => void
-  preventOutsideInteraction?: boolean
+  preventOutsideInteraction?: boolean,
+  blockMaskClick?: boolean,
 }
 
 interface Layout {
@@ -76,6 +77,7 @@ export class Modal extends React.Component<ModalProps, State> {
     labels: {},
     isHorizontal: false,
     preventOutsideInteraction: false,
+    blockMaskClick: false,
   }
 
   layout?: Layout = {
@@ -274,7 +276,11 @@ export class Modal extends React.Component<ModalProps, State> {
       borderRadius={this.props.borderRadius}
       dismissOnPress={this.props.dismissOnPress}
       stop={this.props.stop}
-      handleFunction={() => this.props.currentStep?.handleFunction?.()}
+      handleFunction={() => {
+        this.props.stop();
+        this.props.currentStep?.handleFunction?.()
+      }}
+      blockMaskClick={this.props.blockMaskClick}
     />
   )
 

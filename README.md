@@ -33,7 +33,11 @@
 </div>
 
 ## About this fork
-This is a fork of `https://github.com/xcarpentier/rn-tourguide` with extra properties.
+This is a fork of `https://github.com/xcarpentier/rn-tourguide` with extra features.
+
+### Added features
+- blockMaskClick
+- handleFunction
 
 ## Installation
 
@@ -189,6 +193,7 @@ interface TourGuideZoneProps {
   tooltipBottomOffset?: number
   tooltipLeftOffset?: number
   children: React.ReactNode
+  handleFunction?: () => void // allow pass a method to focused area
 }
 
 type Shape = 'circle' | 'rectangle' | 'circle_and_keep' | 'rectangle_and_keep'
@@ -207,7 +212,8 @@ export interface TourGuideProviderProps {
   animationDuration?: number
   children: React.ReactNode
   dismissOnPress?: boolean
-  preventOutsideInteraction?:boolean
+  preventOutsideInteraction?: boolean
+  blockMaskClick?: boolean // block click outside mask but allow click in focused element
 }
 
 interface TooltipProps {
