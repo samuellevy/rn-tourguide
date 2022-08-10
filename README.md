@@ -10,7 +10,7 @@
   <img width="250" src="https://www.dropbox.com/s/9heua3qgd66125k/rn-tourguide.gif?dl=0&raw=1" alt="RN Tourguide" />
 </p>
 <p align="center">
-    <a href="https://xcarpentier.github.io/rn-tourguide/">
+    <a href="https://samuellevy.github.io/rn-tourguide/">
       🎉DEMO WEB 🎉
     </a>
 </p>
@@ -23,7 +23,7 @@
     <a href="https://www.npmjs.com/package/rn-tourguide">
       <img src="https://img.shields.io/npm/v/rn-tourguide.svg" alt="NPM Version" />
     </a>
-    <a href="http://reactnative.gallery/xcarpentier/rn-tourguide">
+    <a href="http://reactnative.gallery/samuellevy/rn-tourguide">
       <img src="https://img.shields.io/badge/reactnative.gallery-%F0%9F%8E%AC-green.svg"/></a>
     </a>
     <a href="#hire-an-expert">
@@ -31,6 +31,9 @@
     </a>
   </p>
 </div>
+
+## About this fork
+This is a fork of `https://github.com/xcarpentier/rn-tourguide` with extra properties.
 
 ## Installation
 
@@ -184,6 +187,7 @@ interface TourGuideZoneProps {
   borderRadius?: number // round corner when rectangle
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
+  tooltipLeftOffset?: number
   children: React.ReactNode
 }
 
@@ -243,7 +247,7 @@ function HomeScreen() {
 export default HomeScreen
 ```
 
-If you are looking for a working example, please check out [this link](https://github.com/xcarpentier/rn-tourguide/blob/master/App.tsx).
+If you are looking for a working example, please check out [this link](https://github.com/samuellevy/rn-tourguide/blob/master/App.tsx).
 
 ## Using Multiple Tours
 
@@ -293,7 +297,7 @@ If you use multiple tours and would like to use the `startAtMount` prop on the `
 
 ### Custom tooltip component
 
-You can customize the tooltip by passing a component to the `copilot` HOC maker. If you are looking for an example tooltip component, take a look at [the default tooltip implementation](https://github.com/xcarpentier/rn-tourguide/blob/master/src/components/Tooltip.tsx).
+You can customize the tooltip by passing a component to the `copilot` HOC maker. If you are looking for an example tooltip component, take a look at [the default tooltip implementation](https://github.com/samuellevy/rn-tourguide/blob/master/src/components/Tooltip.tsx).
 
 ```js
 const TooltipComponent = ({

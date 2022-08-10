@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xcarpentier/rn-tourguide.git"
+    "url": "git+https://github.com/samuellevy/rn-tourguide.git"
   },
   "keywords": [
     "react-native",
@@ -34,12 +34,12 @@
     "intro.js",
     "intro"
   ],
-  "author": "Xavier Carpentier <xcapetir@gmail.com>",
+  "author": "Samuel Levy <samuellevy.dev@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xcarpentier/rn-tourguide/issues"
+    "url": "https://github.com/samuellevy/rn-tourguide/issues"
   },
-  "homepage": "https://xcarpentier.github.io/rn-tourguide/",
+  "homepage": "https://samuellevy.github.io/rn-tourguide/",
   "devDependencies": {
     "@types/hoist-non-react-statics": "3.3.1",
     "@types/jest": "25.2.3",
