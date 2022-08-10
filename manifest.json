@@ -1,0 +1,9 @@
+{
+  "description": "rn-tourguide",
+  "display": "standalone",
+  "lang": "en",
+  "name": "rn-tourguide",
+  "short_name": "rn-tourguide",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}

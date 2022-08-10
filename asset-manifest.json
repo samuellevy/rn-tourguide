@@ -1,0 +1,31 @@
+{
+  "files": {
+    "app.js": "/rn-tourguide/static/js/app.be3b528e.chunk.js",
+    "app.js.map": "/rn-tourguide/static/js/app.be3b528e.chunk.js.map",
+    "runtime~app.js": "/rn-tourguide/static/js/runtime~app.c1598e90.js",
+    "runtime~app.js.map": "/rn-tourguide/static/js/runtime~app.c1598e90.js.map",
+    "static/js/2.803911ae.chunk.js": "/rn-tourguide/static/js/2.803911ae.chunk.js",
+    "static/js/2.803911ae.chunk.js.map": "/rn-tourguide/static/js/2.803911ae.chunk.js.map",
+    "fonts/AntDesign.ttf": "/rn-tourguide/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/rn-tourguide/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/rn-tourguide/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/rn-tourguide/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/rn-tourguide/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/rn-tourguide/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/rn-tourguide/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/rn-tourguide/./fonts/Foundation.ttf",
+    "fonts/Ionicons.ttf": "/rn-tourguide/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/rn-tourguide/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/rn-tourguide/./fonts/MaterialIcons.ttf",
+    "fonts/SimpleLineIcons.ttf": "/rn-tourguide/./fonts/SimpleLineIcons.ttf",
+    "index.html": "/rn-tourguide/index.html",
+    "manifest.json": "/rn-tourguide/manifest.json",
+    "serve.json": "/rn-tourguide/serve.json",
+    "static/js/2.803911ae.chunk.js.LICENSE.txt": "/rn-tourguide/static/js/2.803911ae.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.c1598e90.js",
+    "static/js/2.803911ae.chunk.js",
+    "static/js/app.be3b528e.chunk.js"
+  ]
+}
