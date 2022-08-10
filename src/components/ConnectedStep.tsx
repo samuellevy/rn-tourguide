@@ -117,7 +117,7 @@ export class ConnectedStep extends React.Component<Props> {
       ref: (wrapper: any) => {
         this.wrapper = wrapper
       },
-      onLayout: () => {}, // Android hack
+      onLayout: () => { }, // Android hack
     }
 
     return React.cloneElement(this.props.children, { copilot })
