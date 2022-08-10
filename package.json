@@ -1,10 +1,13 @@
 {
   "name": "levy-rn-tourguide",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "private": false,
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "yarn config:dev && expo start -c",
     "start:web": "yarn config:dev && expo start -c -w",
