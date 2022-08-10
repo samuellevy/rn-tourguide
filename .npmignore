@@ -16,3 +16,4 @@ test/index.html
 *.test.js
 *.test.d.ts
 web-build
+rollup.config.js
