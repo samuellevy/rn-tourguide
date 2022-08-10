@@ -10,6 +10,7 @@ import {
   ViewStyle,
   TouchableWithoutFeedback,
   ScaledSize,
+  TouchableOpacity,
 } from 'react-native'
 import Svg, { PathProps } from 'react-native-svg'
 import { IStep, ValueXY } from '../types'
@@ -28,6 +29,7 @@ interface Props {
   currentStep?: IStep
   easing: (value: number) => number
   stop: () => void
+  handleFunction: () => void
 }
 
 interface State {
@@ -64,11 +66,9 @@ export class SvgMask extends Component<Props, State> {
       default: Dimensions.get('window'),
     })
 
-    this.firstPath = `M0,0H${this.windowDimensions.width}V${
-      this.windowDimensions.height
-    }H0V0ZM${this.windowDimensions.width / 2},${
-      this.windowDimensions.height / 2
-    } h 1 v 1 h -1 Z`
+    this.firstPath = `M0,0H${this.windowDimensions.width}V${this.windowDimensions.height
+      }H0V0ZM${this.windowDimensions.width / 2},${this.windowDimensions.height / 2
+      } h 1 v 1 h -1 Z`
 
     this.state = {
       canvasSize: {
@@ -192,9 +192,10 @@ export class SvgMask extends Component<Props, State> {
       <Wrapper
         style={this.props.style}
         onLayout={this.handleLayout}
-        pointerEvents='none'
+        // pointerEvents='none'
         onPress={dismissOnPress ? stop : undefined}
       >
+
         <Svg
           pointerEvents='none'
           width={this.state.canvasSize.x}
@@ -209,6 +210,12 @@ export class SvgMask extends Component<Props, State> {
             opacity={this.state.opacity as any}
           />
         </Svg>
+
+        <TouchableOpacity style={{ position: 'absolute', top: this.props.position.y, left: this.props.position.x, width: this.props.size.x, height: this.props.size.y, backgroundColor: 'transparent', zIndex: 999, elevation: 3 }} onPress={() => {
+          try {
+            this.props.handleFunction();
+          } catch (error) { }
+        }}></TouchableOpacity>
       </Wrapper>
     )
   }

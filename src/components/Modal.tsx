@@ -274,6 +274,7 @@ export class Modal extends React.Component<ModalProps, State> {
       borderRadius={this.props.borderRadius}
       dismissOnPress={this.props.dismissOnPress}
       stop={this.props.stop}
+      handleFunction={() => this.props.currentStep?.handleFunction?.()}
     />
   )
 
