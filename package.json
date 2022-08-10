@@ -1,5 +1,5 @@
 {
-  "name": "rn-tourguide",
+  "name": "levy-rn-tourguide",
   "version": "1.1.0",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
   "main": "lib/index.js",
