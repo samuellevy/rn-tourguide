@@ -218,7 +218,7 @@ export class SvgMask extends Component<Props, State> {
           <Text style={{ color: "#FFFFFF", fontSize: 18 }}>✖</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ position: 'absolute', top: this.props.position.y, left: this.props.position.x, width: this.props.size.x, height: this.props.size.y, backgroundColor: 'tomato', zIndex: 999, elevation: 3 }} onPress={() => {
+        <TouchableOpacity style={{ position: 'absolute', top: this.props.position.y, left: this.props.position.x, width: this.props.size.x, height: this.props.size.y, backgroundColor: 'transparent', zIndex: 999, elevation: 3 }} onPress={() => {
           try {
             this.props.handleFunction();
           } catch (error) { }
