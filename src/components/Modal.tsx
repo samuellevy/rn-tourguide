@@ -8,7 +8,6 @@ import {
   StyleProp,
   StyleSheet,
   Text,
-  Touchable,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -353,10 +352,6 @@ export class Modal extends React.Component<ModalProps, State> {
               {this.renderTooltip()}
             </>
           )}
-
-          <TouchableOpacity style={{ flex: 1, position: "absolute", top: 20, right: 20 }} onPress={() => this.props.stop()}>
-            <Text style={{ color: "black", fontSize: 18 }}>✖</Text>
-          </TouchableOpacity>
         </View>
       </View>
     )

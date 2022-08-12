@@ -194,6 +194,7 @@ interface TourGuideZoneProps {
   tooltipLeftOffset?: number
   children: React.ReactNode
   handleFunction?: () => void // allow pass a method to focused area
+  blockMaskClick?: boolean // flag to set if svg mask is clickable
 }
 
 type Shape = 'circle' | 'rectangle' | 'circle_and_keep' | 'rectangle_and_keep'
