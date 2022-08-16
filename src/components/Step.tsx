@@ -18,6 +18,7 @@ interface Props {
   tooltipLeftOffset?: number
   borderRadiusObject?: BorderRadiusObject
   handleFunction?: () => void
+  handleCloseFunction?: () => void
 }
 
 export const Step = (props: Props) => {

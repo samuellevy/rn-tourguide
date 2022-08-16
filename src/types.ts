@@ -18,6 +18,7 @@ export interface IStep {
   tooltipBottomOffset?: number
   borderRadiusObject?: BorderRadiusObject
   handleFunction?: () => void
+  handleCloseFunction?: () => void
 }
 export interface StepObject {
   [key: string]: IStep

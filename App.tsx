@@ -119,6 +119,7 @@ const AppContent = () => {
           height={64}
           tooltipBottomOffset={200}
           handleFunction={() => console.log('handleFunction')}
+          handleCloseFunction={() => console.log('handleCloseFunction')}
         />
       ) : null}
     </View>

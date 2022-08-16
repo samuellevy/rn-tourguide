@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native'
-import Svg, { PathProps } from 'react-native-svg'
+import Svg, { Path, PathProps } from 'react-native-svg'
 import { IStep, ValueXY } from '../types'
 import { svgMaskPathMorph } from '../utilities'
 import { AnimatedSvgPath } from './AnimatedPath'
@@ -31,7 +31,8 @@ interface Props {
   easing: (value: number) => number
   stop: () => void
   handleFunction: () => void
-  blockMaskClick?: boolean
+  blockMaskClick?: boolean,
+  handleCloseFunction: () => void
 }
 
 interface State {
@@ -214,8 +215,11 @@ export class SvgMask extends Component<Props, State> {
           />
         </Svg>
 
-        <TouchableOpacity style={{ flex: 1, position: "absolute", top: 20, right: 20 }} onPress={() => this.props.stop()}>
-          <Text style={{ color: "#FFFFFF", fontSize: 18 }}>✖</Text>
+        <TouchableOpacity style={{ flex: 1, position: "absolute", top: 40, right: 20, }} onPress={() => {
+          this.props.handleCloseFunction()
+          this.props.stop()
+        }}>
+          <Text style={{ color: "#FFFFFF", fontSize: 20, fontWeight: 'bold', padding: 10 }}>x</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={{ position: 'absolute', top: this.props.position.y, left: this.props.position.x, width: this.props.size.x, height: this.props.size.y, backgroundColor: 'transparent', zIndex: 999, elevation: 3 }} onPress={() => {
