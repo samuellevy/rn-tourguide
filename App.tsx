@@ -120,6 +120,8 @@ const AppContent = () => {
           tooltipBottomOffset={200}
           handleFunction={() => console.log('handleFunction')}
           handleCloseFunction={() => console.log('handleCloseFunction')}
+          maskMarginLeft={-32}
+          maskMarginTop={-32}
         />
       ) : null}
     </View>

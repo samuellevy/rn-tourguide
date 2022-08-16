@@ -21,6 +21,8 @@ export interface TourGuideZoneByPositionProps {
   text?: string
   handleFunction?: () => void
   handleCloseFunction?: () => void
+  maskMarginTop?: number
+  maskMarginLeft?: number
 }
 
 export const TourGuideZoneByPosition = ({
@@ -40,7 +42,9 @@ export const TourGuideZoneByPosition = ({
   borderRadiusObject,
   text,
   handleFunction,
-  handleCloseFunction
+  handleCloseFunction,
+  maskMarginTop,
+  maskMarginLeft
 }: TourGuideZoneByPositionProps) => {
   if (!isTourGuide) {
     return null
@@ -62,7 +66,9 @@ export const TourGuideZoneByPosition = ({
           borderRadiusObject,
           text,
           handleFunction,
-          handleCloseFunction
+          handleCloseFunction,
+          maskMarginTop,
+          maskMarginLeft
         }}
         style={{
           position: 'absolute',

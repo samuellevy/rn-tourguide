@@ -19,6 +19,8 @@ interface Props {
   borderRadiusObject?: BorderRadiusObject
   handleFunction?: () => void
   handleCloseFunction?: () => void
+  maskMarginTop?: number
+  maskMarginLeft?: number
 }
 
 export const Step = (props: Props) => {

@@ -19,6 +19,8 @@ export interface IStep {
   borderRadiusObject?: BorderRadiusObject
   handleFunction?: () => void
   handleCloseFunction?: () => void
+  maskMarginTop?: number
+  maskMarginLeft?: number
 }
 export interface StepObject {
   [key: string]: IStep

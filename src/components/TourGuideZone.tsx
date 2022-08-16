@@ -20,7 +20,9 @@ export interface TourGuideZoneProps {
   borderRadiusObject?: BorderRadiusObject
   handleFunction?: () => void
   handleCloseFunction?: () => void
-  closeButton?: React.FC
+  closeButton?: React.FC,
+  maskMarginTop?: number
+  maskMarginLeft?: number
 }
 
 export const TourGuideZone = ({
@@ -39,7 +41,9 @@ export const TourGuideZone = ({
   borderRadiusObject,
   handleFunction,
   handleCloseFunction,
-  closeButton
+  closeButton,
+  maskMarginTop,
+  maskMarginLeft
 }: TourGuideZoneProps) => {
   if (!isTourGuide) {
     return <>{children}</>
@@ -61,7 +65,9 @@ export const TourGuideZone = ({
         borderRadiusObject,
         handleFunction,
         handleCloseFunction,
-        closeButton
+        closeButton,
+        maskMarginTop,
+        maskMarginLeft
       }}
     >
       <Wrapper {...{ style }}>{children}</Wrapper>
