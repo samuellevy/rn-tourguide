@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native'
-import Svg, { Path, PathProps } from 'react-native-svg'
+import Svg, { PathProps } from 'react-native-svg'
 import { IStep, ValueXY } from '../types'
 import { svgMaskPathMorph } from '../utilities'
 import { AnimatedSvgPath } from './AnimatedPath'
