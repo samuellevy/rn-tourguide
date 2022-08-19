@@ -88,22 +88,17 @@ export const defaultSvgPath = ({
       radius,
     )
 
-    return `M${position.x},${position.y}H${
-      position.x + size.x
-    } a${borderRadiusTopRight},${borderRadiusTopRight} 0 0 1 ${borderRadiusTopRight},${borderRadiusTopRight}V${
-      position.y + size.y - borderRadiusTopRight
-    } a${borderRadiusBottomRight},${borderRadiusBottomRight} 0 0 1 -${borderRadiusBottomRight},${borderRadiusBottomRight}H${
-      position.x
-    } a${borderRadiusBottomLeft},${borderRadiusBottomLeft} 0 0 1 -${borderRadiusBottomLeft},-${borderRadiusBottomLeft}V${
-      position.y +
+    return `M${position.x},${position.y}H${position.x + size.x
+      } a${borderRadiusTopRight},${borderRadiusTopRight} 0 0 1 ${borderRadiusTopRight},${borderRadiusTopRight}V${position.y + size.y - borderRadiusTopRight
+      } a${borderRadiusBottomRight},${borderRadiusBottomRight} 0 0 1 -${borderRadiusBottomRight},${borderRadiusBottomRight}H${position.x
+      } a${borderRadiusBottomLeft},${borderRadiusBottomLeft} 0 0 1 -${borderRadiusBottomLeft},-${borderRadiusBottomLeft}V${position.y +
       (borderRadiusBottomLeft > borderRadiusTopLeft
         ? borderRadiusTopLeft
         : borderRadiusBottomLeft)
-    } a${borderRadiusTopLeft},${borderRadiusTopLeft} 0 0 1 ${borderRadiusTopLeft},-${borderRadiusTopLeft}Z`
+      } a${borderRadiusTopLeft},${borderRadiusTopLeft} 0 0 1 ${borderRadiusTopLeft},-${borderRadiusTopLeft}Z`
   }
-  return `M${position.x},${position.y}H${position.x + size.x}V${
-    position.y + size.y
-  }H${position.x}V${position.y}Z`
+  return `M${position.x},${position.y}H${position.x + size.x}V${position.y + size.y
+    }H${position.x}V${position.y}Z`
 }
 
 export const circleSvgPath = ({
@@ -116,8 +111,7 @@ export const circleSvgPath = ({
   const radius = Math.round(Math.max(size.x, size.y) / 2)
   return [
     `M${position.x - size.x / 8},${position.y + size.y / 2}`,
-    `a${radius} ${radius} 0 1 0 ${radius * 2} 0 ${radius} ${radius} 0 1 0-${
-      radius * 2
+    `a${radius} ${radius} 0 1 0 ${radius * 2} 0 ${radius} ${radius} 0 1 0-${radius * 2
     } 0`,
   ].join('')
 }
@@ -125,19 +119,22 @@ export const circleSvgPath = ({
 const sizeOffset = memoize((size: ValueXY, maskOffset: number = 0) =>
   maskOffset
     ? {
-        x: size.x + maskOffset,
-        y: size.y + maskOffset,
-      }
+      x: size.x + maskOffset,
+      y: size.y + maskOffset,
+    }
     : size,
 )
 
-const positionOffset = memoize((position: ValueXY, maskOffset: number = 0) =>
+const positionOffset = memoize((position: ValueXY, maskOffset: number = 0, maskMarginTop: number = 0) =>
   maskOffset
     ? {
-        x: position.x - maskOffset / 2,
-        y: position.y - maskOffset / 2,
-      }
-    : position,
+      x: position.x - maskOffset / 2,
+      y: (position.y - maskOffset / 2) + maskMarginTop,
+    }
+    : {
+      x: position.x,
+      y: position.y + maskMarginTop,
+    },
 )
 
 const getMaxSegmentLength = memoize((shape: Shape) => {
@@ -167,6 +164,7 @@ const getInterpolator = memoize(
     maskOffset: number = 0,
     borderRadius: number = 0,
     borderRadiusObject?: BorderRadiusObject,
+    maskMarginTop: number = 0,
   ) => {
     const options = {
       maxSegmentLength: getMaxSegmentLength(shape),
@@ -217,7 +215,7 @@ const getInterpolator = memoize(
             path,
             defaultSvgPath({
               size: sizeOffset(size, maskOffset),
-              position: positionOffset(position, maskOffset),
+              position: positionOffset(position, maskOffset, maskMarginTop),
               borderRadius,
               borderRadiusObject,
             }),
@@ -234,7 +232,7 @@ const getInterpolator = memoize(
 export const svgMaskPathMorph = ({
   previousPath,
   animation,
-  to: { position, size, shape, maskOffset, borderRadius, borderRadiusObject },
+  to: { position, size, shape, maskOffset, borderRadius, borderRadiusObject, maskMarginTop },
 }: SVGMaskPathMorphParam) => {
   const interpolator = getInterpolator(
     cleanPath(previousPath),
@@ -244,6 +242,7 @@ export const svgMaskPathMorph = ({
     maskOffset,
     borderRadius,
     borderRadiusObject,
+    maskMarginTop
   )
 
   return `${getCanvasPath(previousPath)}${interpolator(

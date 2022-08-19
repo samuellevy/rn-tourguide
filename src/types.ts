@@ -55,6 +55,8 @@ export interface SVGMaskPathMorphParam {
     maskOffset?: number
     borderRadius?: number
     borderRadiusObject?: BorderRadiusObject
+    maskMarginTop?: number
+    maskMarginLeft?: number
   }
 }
 export type SVGMaskPathMorph = (

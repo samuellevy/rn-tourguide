@@ -34,7 +34,6 @@ interface Props {
   blockMaskClick?: boolean,
   handleCloseFunction: () => void,
   maskMarginTop?: number
-  maskMarginLeft?: number
 }
 
 interface State {
@@ -111,9 +110,7 @@ export class SvgMask extends Component<Props, State> {
 
   getPath = () => {
     const { previousPath, animation } = this.state
-    const { size, position, currentStep, maskOffset, borderRadius, maskMarginTop, maskMarginLeft } = this.props
-    position.x += maskMarginLeft ? maskMarginLeft : 0;
-    position.y += maskMarginTop ? maskMarginTop : 0;
+    const { size, position, currentStep, maskOffset, borderRadius } = this.props
 
     return svgMaskPathMorph({
       animation: animation as any,

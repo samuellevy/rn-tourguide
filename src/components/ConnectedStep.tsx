@@ -18,6 +18,8 @@ interface Props {
   borderRadius?: number
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
+  maskMarginTop?: number
+  maskMarginLeft?: number
 }
 
 export class ConnectedStep extends React.Component<Props> {
@@ -85,7 +87,7 @@ export class ConnectedStep extends React.Component<Props> {
       const measure = () => {
         // Wait until the wrapper element appears
         if (this.wrapper && this.wrapper.measure) {
-          const { borderRadius } = this.props
+          const { borderRadius, maskMarginTop } = this.props
           this.wrapper.measure(
             (
               _ox: number,
@@ -97,7 +99,7 @@ export class ConnectedStep extends React.Component<Props> {
             ) =>
               resolve({
                 x: borderRadius ? x + borderRadius : x,
-                y,
+                y: maskMarginTop ? y + maskMarginTop : y,
                 width: borderRadius ? width - borderRadius * 2 : width,
                 height,
               }),

@@ -284,8 +284,6 @@ export class Modal extends React.Component<ModalProps, State> {
         this.props.currentStep?.handleCloseFunction?.()
       }}
       blockMaskClick={this.props.blockMaskClick}
-      maskMarginTop={this.props.currentStep?.maskMarginTop}
-      maskMarginLeft={this.props.currentStep?.maskMarginLeft}
     />
   )
 
