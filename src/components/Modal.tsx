@@ -57,6 +57,7 @@ interface State {
   position?: ValueXY
   tooltipTranslateY: Animated.Value
   opacity: Animated.Value
+  tooltipDirection: string
 }
 
 interface Move {
@@ -95,6 +96,7 @@ export class Modal extends React.Component<ModalProps, State> {
     layout: undefined,
     size: undefined,
     position: undefined,
+    tooltipDirection: 'up',
   }
 
   constructor(props: ModalProps) {
@@ -232,6 +234,7 @@ export class Modal extends React.Component<ModalProps, State> {
         x: Math.floor(Math.max(obj.left, 0)),
         y: Math.floor(Math.max(obj.top, 0)),
       },
+      tooltipDirection: verticalPosition,
     })
   }
 
@@ -261,6 +264,10 @@ export class Modal extends React.Component<ModalProps, State> {
   handleStop = () => {
     this.reset()
     this.props.stop()
+  }
+
+  handleVerticalPosition = (): string => {
+    return this.state.tooltipDirection;
   }
 
   renderMask = () => (
@@ -316,6 +323,7 @@ export class Modal extends React.Component<ModalProps, State> {
           handleNext={this.handleNext}
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
+          handleVerticalPosition={this.handleVerticalPosition}
           labels={this.props.labels}
         />
       </Animated.View>
